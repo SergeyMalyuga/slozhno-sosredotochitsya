@@ -1,40 +1,77 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="color-scheme" content="dark light"/>
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./fonts/fonts.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/dark.css">
+    <link rel="stylesheet" href="./styles/light.css">
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="icon" href="./images/favicon.ico" sizes="any">
+    <link rel="icon" href="./images/favicon.svg" type="images/svg+xml">
+    <link rel="apple-touch-icon" href="./images/mobile-icon.png" sizes="any">
+    <link rel="icon" href="./images/mobile-icon.png" sizes="any">
     <title>Сложно сосредоточиться</title>
-  </head>
-  <body class="page">
-    <header class="header decorated-zone">
-      <nav class="header__theme-menu">
+</head>
+<body class="page">
+<header class="header decorated-zone">
+    <div class="header__decorations">
+        <span class="header__rec">REC</span>
+        <div class="page__rectangle-right"></div>
+    </div>
+    <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
+            <li class="header__theme-menu-item">
+                <button
+                        class="header__theme-menu-button header__theme-menu-button_type_light"
+                >
+                    День
+                </button>
+            </li>
+            <li class="header__theme-menu-item">
+                <button
+                        class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
+                        disabled
+                >
+                    Авто
+                </button>
+            </li>
+            <li class="header__theme-menu-item">
+                <button
+                        class="header__theme-menu-button header__theme-menu-button_type_dark"
+                >
+                    Неон
+                </button>
+            </li>
         </ul>
-      </nav>
-    </header>
-    <script src="./scripts/script.js"></script>
-  </body>
+    </nav>
+    <h1 class="header__title">no focus</h1>
+    <p class="header-paragraph title-decor">Что делать, когда не можешь делать ничего</br>
+        Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+    <div class="page__rectangle-left"></div>
+</header>
+<main>
+    <section class="content">
+        <h2 class="content__title">Почему сосредоточиться так сложно</h2>
+        <article class="content__card">
+            <p class="title-decor">Многозадачность</p>
+            <p>Особенно сложно сосредоточиться, когда задач много и все они — важные.
+                Где же легендарная многозадачность, когда она так нужна вам (и всем нанимающим менеджерам этого мира)?
+                А дело в том, что её просто не существует. Исследователи выяснили, что мозгу тяжело концентрироваться
+                даже на двух делах одновременно. А когда в поле внимания попадает несколько важных задач, организм
+                паникует и выделяет кортизол и адреналин — «гормоны стресса». Из-за этого мы работаем невнимательно:
+                ошибаемся и быстро устаём.</p>
+        </article>
+    </section>
+    <section></section>
+    <section></section>
+    <section></section>
+</main>
+<footer></footer>
+<script src="./scripts/script.js"></script>
+</body>
 </html>
