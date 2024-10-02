@@ -1,5 +1,118 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: var(--main-font), sans-serif;
+    font-size: var(--main-text-size);
+    font-style: normal;
+    font-weight: 400;
+    padding: 10px;
+    background-image: url("../images/cover-image-dark.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: var(--bg-color);
+    /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
+
+.header {
+    display: grid;
+    grid-template-rows: repeat(5, min-content);
+/*    background-image: url("../images/cover-image-dark.png");*/
+/*    background-repeat: no-repeat;*/
+/*background-position: bottom;*/
+}
+
+.header__decorations {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2.96px;
+    margin-block-end: 39px;
+}
+
+.header__theme-menu {
+    justify-self: end;
+}
+
+.header__rec {
+    color: var(--accent-color);
+    line-height: 25px; /* 138.889% */
+}
+
+.page__rectangle-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: 25px;
+    block-size: 25px;
+    border-block-start: 1px solid var(--accent-color);
+    border-inline-end: 1px solid var(--accent-color);
+}
+
+.page__rectangle-right::after {
+    content: '';
+    display: block;
+    inline-size: 9px;
+    block-size: 9px;
+    background-color: var(--accent-color);
+    box-shadow: 0px 0px 8px var(--accent-color);
+    border-radius: 50%;
+}
+
+@supports (filter: drop-shadow(0px 0px 4px var(--accent-color))) {
+    .page__rectangle::after {
+        box-shadow: none;
+        filter: drop-shadow(0px 0px 4px var(--accent-color))
+    }
+}
+
+.header__theme-menu {
+    margin-block-end: 65px;
+    color: var(--accent-color);
+}
+
+.header__theme-menu-button {
+    border: none;
+    text-align: center;
+    background-color: transparent;
+    text-transform: lowercase;
+}
+
+.header__title {
+    color: var(--title-color);
+    text-shadow: var(--title-shadow);
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 82.5%; /* 95.7px */
+    margin-block-end: 55px;
+}
+
+.header-paragraph {
+   margin-block-end: 31px;
+}
+
+.title-decor {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    font-weight: 700;
+}
+
+.page__rectangle-left {
+    inline-size: 25px;
+    block-size: 25px;
+    border-block-end: 1px solid var(--accent-color);
+    border-inline-start: 1px solid var(--accent-color);
+    align-self: end;
+}
+
+.content__title {
+    color: var(--accent-color);
+    font-size: var(--main-text-size);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 23.4px; /* 130% */
+}
+
+
