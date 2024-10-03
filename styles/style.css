@@ -6,29 +6,29 @@
     gap: 40px;
     font-family: var(--main-font), sans-serif;
     font-size: var(--main-text-size);
+    color: var(--text-color);
+    line-height: 23.4px;
     font-style: normal;
     font-weight: 400;
-    padding: 10px;
-    background-image: url("../images/cover-image-dark.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
+    padding: 0 10px;
     background-color: var(--bg-color);
     /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
     display: grid;
+    padding: 10px 0;
     grid-template-rows: repeat(5, min-content);
-/*    background-image: url("../images/cover-image-dark.png");*/
-/*    background-repeat: no-repeat;*/
-/*background-position: bottom;*/
+    background-image: url("../images/cover-image-dark.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 .header__decorations {
     display: flex;
     justify-content: flex-end;
     gap: 2.96px;
-    margin-block-end: 39px;
+    margin-block-end: 40.5px;
 }
 
 .header__theme-menu {
@@ -68,11 +68,22 @@
 }
 
 .header__theme-menu {
-    margin-block-end: 65px;
+    margin-block-end: 68.5px;
     color: var(--accent-color);
 }
 
+.header__theme-menu-item {
+    line-height: 18px;
+}
+
+.header__theme-menu-item:not(:last-child) {
+    margin-block-end: 13px;
+}
+
 .header__theme-menu-button {
+    padding: 0 13px;
+    min-inline-size: 70px;
+    min-block-size: 23px;
     border: none;
     text-align: center;
     background-color: transparent;
@@ -93,10 +104,16 @@
    margin-block-end: 31px;
 }
 
-.title-decor {
+.title-decor-bold {
     background-color: var(--accent-color);
     color: var(--accent-text-color);
     font-weight: 700;
+}
+
+.title-decor-regular {
+    background-color: var(--accent-color);
+    color: var(--accent-text-color);
+    font-weight: 400;
 }
 
 .page__rectangle-left {
@@ -107,12 +124,51 @@
     align-self: end;
 }
 
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.content__section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content__card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .content__title {
     color: var(--accent-color);
     font-size: var(--main-text-size);
     font-style: normal;
     font-weight: 700;
-    line-height: 23.4px; /* 130% */
 }
 
+.content__img {
+    object-fit: contain;
+    object-position: center;
+}
+
+.content__section-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__title {
+    --title-shadow: 2px 2px 0px var(--accent-color);
+    color: var(--title-color);
+    text-shadow: var(--title-shadow);
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 82.5%;
+    margin-block-start: 286px;
+    margin-block-end: 285px;
+}
 
