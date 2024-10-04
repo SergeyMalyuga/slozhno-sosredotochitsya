@@ -27,6 +27,27 @@
     visibility: hidden;
 }
 
+.page.theme_light .header__theme-menu-button:focus {
+    outline: none;
+}
+
+.page.theme_light .header__theme-menu-button:focus-visible {
+    border-color: transparent;
+    border-bottom-color: var(--text-color);
+}
+
+.page.theme_light .header__theme-menu-button:hover {
+    border-color: var(--text-color);
+}
+
+.page.theme_light .header__theme-menu-button_type_dark {
+    border-color: transparent;
+}
+
+.page.theme_light .header__theme-menu-button_type_light {
+    border-color: var(--text-color);
+}
+
 .page.theme_light .header__title {
     color: var(--title-color);
     text-shadow: var(--title-shadow);
