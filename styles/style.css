@@ -96,6 +96,7 @@
     text-align: center;
     background-color: transparent;
     text-transform: lowercase;
+    cursor: pointer;
 }
 
 .header__title {
@@ -180,6 +181,7 @@
 
 .footer {
     display: flex;
+    position: relative;
     min-block-size: 667px;
     flex-direction: column;
     justify-content: center;
@@ -414,10 +416,14 @@
 
     .street {
         grid-area: street;
+        padding-block-start: 6px;
+        padding-inline-end: 1px;
     }
 
     .ice-cream {
         grid-area: ice-cream;
+        padding-block-start: 1px;
+        padding-inline-end: 1px;
     }
 
     .tape {
