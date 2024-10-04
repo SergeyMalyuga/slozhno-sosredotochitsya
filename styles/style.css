@@ -1,5 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
     display: flex;
     flex-direction: column;
@@ -12,7 +10,6 @@
     font-weight: 400;
     padding: 0 10px;
     background-color: var(--bg-color);
-    /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
@@ -22,7 +19,7 @@
     grid-template-rows: repeat(5, min-content);
     background-image: url("../images/cover-image-dark.png");
     background-repeat: no-repeat;
-    background-position: bottom;
+    /*background-position: bottom;*/
 }
 
 .decorated-zone::before {
@@ -52,11 +49,13 @@
 .header__decorations {
     display: flex;
     justify-content: end;
-    margin-block-end: 40.5px;
 }
 
 .header__rec {
     display: flex;
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-end: 0;
     align-items: center;
     margin-inline-end: 10px;
     gap: 10px;
@@ -80,6 +79,10 @@
     color: var(--accent-color);
 }
 
+.header__theme-menu-list {
+    margin-block-start: 66.5px;
+}
+
 .header__theme-menu-item {
     line-height: 18px;
 }
@@ -92,11 +95,28 @@
     padding: 0 13px;
     min-inline-size: 70px;
     min-block-size: 23px;
-    border: none;
+    border: 1px solid transparent;
     text-align: center;
     background-color: transparent;
     text-transform: lowercase;
     cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+    border-color: var(--accent-color);
+}
+
+.header__theme-menu-button:focus {
+    outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+    border-color: transparent;
+    border-bottom-color: var(--text-color);
+}
+
+.header__theme-menu-button_type_dark {
+    border-color: var(--accent-color);
 }
 
 .header__title {
@@ -171,6 +191,29 @@
 .content__link {
     --title-shadow: 1px 1px 0px var(--accent-color);
     text-shadow: var(--title-shadow);
+    text-decoration: none;
+    width: 89px;
+    height: 15px;
+}
+
+.content__link:focus {
+    position: relative;
+    outline: none;
+}
+
+.content__link:focus-visible:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 0;
+    width: 100%;
+    height: 85%;
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+}
+
+.content__link:hover {
+    border-bottom: 1px solid var(--text-color);
 }
 
 .content__section-images {
@@ -213,17 +256,21 @@
         padding: 20px 0;
     }
 
-    .header__decorations {
-        margin-block-end: 147.5px;
+    .header__rec {
+        inset-block-start: 20px;
     }
 
     .header__theme-menu {
         margin-block-end: 176px;
+        margin-block-start: 106px;
     }
+
+    /*.header__theme-menu-list {*/
+    /*    margin-top: 600px;*/
+    /*}*/
 
     .header__title {
         position: relative;
-        /*font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);*/
         inset-inline-end: 20px;
         margin-block-end: 162px;
     }
@@ -236,7 +283,6 @@
 
     .decorated-zone::before {
         top: 20px;
-
     }
 
     .decorated-zone::after {
@@ -251,14 +297,14 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         grid-template-areas:
-            'name-box description-box';
+            'name-box       description-box';
         gap: 20px;
     }
 
     .content__section_vertical-direction {
         grid-template-areas:
-                'name-box .'
-        'description-box description-box';
+                'name-box                       .      '
+                'description-box        description-box';
     }
 
     .description-box {
@@ -300,10 +346,10 @@
         grid-template-rows: 23px 192px 230px 318px;
         gap: 20px;
         grid-template-areas:
-                'name-box name-box name-box'
-                'sunset sunset ice-cream'
-                'tape books ice-cream'
-                'tape street street';
+                'name-box       name-box    name-box'
+                'sunset         sunset      ice-cream'
+                'tape           books       ice-cream'
+                'tape           street      street';
     }
 
     .footer {
@@ -318,14 +364,12 @@
 }
 
 @media (1024px <= width) {
-
     .header__theme-menu {
         grid-area: menu;
     }
 
     .header__rec {
-        grid-area: rec;
-        align-self: start;
+        inset-block-start: 20px;
     }
 
     .header__title {
@@ -346,21 +390,24 @@
 
     .page {
         padding: 0 20px;
-        gap: 60px;
+        gap: 61px;
     }
 
     .header {
         padding: 20px 0;
         grid-template-columns: 1fr min-content;
         grid-template-areas:
-                'menu rec'
-                'title title'
-                'paragraph paragraph';
+                'menu       rec'
+                'title      title'
+                'paragraph  paragraph';
+    }
+
+    .header__decorations {
+        margin-block-end: 0;
     }
 
     .header__theme-menu {
         justify-self: center;
-        margin-inline-start: 60px;
         margin-block-end: 264px;
         color: var(--accent-color);
     }
@@ -368,6 +415,7 @@
     .header__theme-menu-list {
         display: flex;
         gap: 10px;
+        margin: 0;
     }
 
     .decorated-zone::before {
@@ -385,7 +433,7 @@
 
     .content__section {
         display: grid;
-        grid-template-columns: 1fr 2.1fr;
+        grid-template-columns: 1fr min(649px);
         grid-template-areas:
             'name-box description-box';
         gap: 20px;
@@ -393,8 +441,8 @@
 
     .content__section_vertical-direction {
         grid-template-areas:
-                'name-box .'
-        'description-box description-box'
+                'name-box                .      '
+                'description-box description-box'
 
     }
 
@@ -416,13 +464,12 @@
 
     .street {
         grid-area: street;
-        padding-block-start: 6px;
+        padding-block-start: 5px;
         padding-inline-end: 1px;
     }
 
     .ice-cream {
         grid-area: ice-cream;
-        padding-block-start: 1px;
         padding-inline-end: 1px;
     }
 
@@ -444,17 +491,17 @@
     .content__section-images {
         display: grid;
         grid-template-columns:  repeat(3, min(315px));
-        grid-template-rows: 23px 260px 315px 434px;
+        grid-template-rows: 23px 260px 315px 433px;
         gap: 20px;
         grid-template-areas:
-                'name-box name-box name-box'
-                'sunset sunset ice-cream'
-                'tape books ice-cream'
-                'tape street street';
+                'name-box   name-box    name-box'
+                'sunset     sunset      ice-cream'
+                'tape       books       ice-cream'
+                'tape       street      street';
     }
 
     .footer {
-        min-block-size: 768px;
+        min-block-size: 764px;
         padding: 20px;
         font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     }
