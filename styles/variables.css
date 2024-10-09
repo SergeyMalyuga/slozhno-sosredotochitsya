@@ -4,6 +4,7 @@
     --text-color: #F1B2CE;
     --accent-text-color: #000028;
     --accent-color: #FF0070;
+    --accent-color-rectangle: #FF0070;
     --main-font: 'IBM Plex mono';
     --main-text-size: 18px;
     --title-shadow: 4px 4px 0px var(--accent-color);
