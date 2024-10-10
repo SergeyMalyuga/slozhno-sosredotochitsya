@@ -9,11 +9,15 @@
 }
 
 .theme_dark .header__theme-menu-button_type_dark {
-    border-color: var(--text-color);
+    border-color: var(--accent-color);
 }
 
 .theme_dark .header__theme-menu-button_type_light {
     border-color: transparent;
+}
+
+.theme_dark .header__theme-menu-button:hover {
+    border-color: rgba(255, 0, 112, 0.40);
 }
 
 .theme_dark .header__decorations {
