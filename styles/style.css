@@ -123,7 +123,7 @@
 
 .header__theme-menu-button:focus-visible {
     border-color: transparent;
-    border-bottom-color: var(--text-color);
+    border-bottom-color: var(--accent-color);
 }
 
 .header__theme-menu-button_type_dark {
