@@ -181,10 +181,6 @@
     gap: 20px;
 }
 
-.small-margin {
-    margin-block-end: 10px;
-}
-
 .content__section {
     display: grid;
     grid-template-columns: 1fr;
